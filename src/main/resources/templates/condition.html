@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditionals</title>
+</head>
+<body>
+    <h1>Conditionals</h1>
+    <h1>
+        User is <span th:style="${isActive} ? 'color:green' : 'color:red' " th:text="${isActive} ? 'ACTIVE' : 'NOT ACTIVE' " ></span>
+    </h1>
+
+    <h1 th:if="${gender} == 'M'">Male</h1>
+    <h1 th:unless="${gender} == 'M'">Female</h1>
+
+
+    <div th:switch="${#lists.size(mylist)}">
+        <h1 th:case="'0'">Zero Element</h1>
+        <h1 th:case="'1'">One Element</h1>
+        <h1 th:case="*">More than one Elements</h1>
+    </div>
+
+
+</body>
+</html>
